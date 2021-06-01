@@ -1,7 +1,10 @@
 const losts = document.getElementById('lost');
 const deaths = document.getElementById('death');
 
-
+for(i = 1; i < 10; i++) { 
+		getHole = i => document.getElementById(`hole${i}`);      
+    getHole(i).onclick = getHit;
+  }
    
  function getHit() {
   if (this.className.includes( 'hole_has-mole' )) {
@@ -23,7 +26,3 @@ const deaths = document.getElementById('death');
   } 
  }
 
-for(i = 1; i < 10; i++) { 
-		getHole = i => document.getElementById(`hole${i}`);      
-    getHole(i).onclick = getHit;
-  }
