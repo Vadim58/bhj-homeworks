@@ -1,24 +1,12 @@
-let subMenu = document.querySelectorAll('ul.menu_sub');
-let linkAbout;
-let linkServices;
 let linksArray = Array.from(document.querySelectorAll('a.menu__link'));
+let subMenu = document.querySelector('ul.menu_sub');
 for (let i = 0; i < linksArray.length; i++) {
-    if (linksArray[i].textContent.includes('О компании')) {
-        linkAbout = linksArray[i]
-    }
+  linksArray[i].onclick = () => {
+	  if(linksArray[i].closest('li') === subMenu.closest('li')){
+	    subMenu.classList.toggle('menu_active');
+	  return false;
+	  }
+  }
 }
-for (let i = 0; i < linksArray.length; i++) {
-    if (linksArray[i].textContent.includes('Услуги')) {
-        linkServices = linksArray[i]
-    }
-}
-linkAbout.onclick = () => {
-    subMenu[0].classList.toggle('menu_active');
-    return false;
-}
-linkServices.onclick = () => {
-    subMenu[1].classList.toggle('menu_active');
-    return false;
-};
 
 
