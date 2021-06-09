@@ -13,11 +13,11 @@ for (let i = 0; i < linksArray.length; i++) {
     }
 }
 linkAbout.onclick = () => {
-    subMenu[0].classList.add('menu_active');
+    subMenu[0].classList.toggle('menu_active');
     return false;
 }
 linkServices.onclick = () => {
-    subMenu[1].classList.add('menu_active');
+    subMenu[1].classList.toggle('menu_active');
     return false;
 };
 
