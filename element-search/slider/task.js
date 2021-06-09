@@ -12,6 +12,7 @@ arrowNext.onclick = () => {
   else {
 	   picArray[index].classList.remove('slider__item_active');
        picArray[0].classList.add('slider__item_active');
+	   return false;
   }
 }
 
