@@ -4,8 +4,8 @@ for (let i = 0; i < linksArray.length; i++) {
   linksArray[i].onclick = () => {
 	  if(linksArray[i].closest('li') === subMenu.closest('li')){
 	    subMenu.classList.toggle('menu_active');
-	  return false;
-	  }
+	    return false;
+	}
   }
 }
 
