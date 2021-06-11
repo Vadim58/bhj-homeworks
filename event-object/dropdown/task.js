@@ -1,24 +1,29 @@
-let arrow = document.querySelector('div.dropdown__value');
+let mainButton = document.querySelector('div.dropdown__value');
 let dropDown = document.querySelector('.dropdown__list');
-let listItem = document.querySelectorAll('li');
+let listItem = Array.from(document.querySelectorAll('li'));
 
 
-
-function cliik () {
+function mainClick () {
 	dropDown.classList.toggle('dropdown__list_active');
-	return false
-	
+	return false	
 }
 
-function lil () {
+function itemClick () {
 	
-	dropDown.classList.remove('dropdown__list_active');
-	arrow.textContent = "hooy";
-	
+	//dropDown.classList.remove('dropdown__list_active');
+	mainButton.textContent = 'ffff';
+    return false
 }
 
-arrow.addEventListener('click', cliik);
 
-for (let i = 0; i < listItem.length; i++){
-listItem[i].addEventListener('click', lil);
-}
+//ОБРАБОТЧИКИ СОБЫТИЙ
+
+mainButton.addEventListener('click', mainClick);
+
+
+	
+listItem.addEventListener('click', itemClick);
+
+
+
+
