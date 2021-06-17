@@ -8,11 +8,10 @@ mainButton.addEventListener('click', function () {
 });
 
 for (let i = 0; i < dropDownLink.length; i++) {
-dropDownLink[i].addEventListener('click', function () {
-	for (i = 0; i < dropDownLink.length; i++) {
+dropDownLink[i].addEventListener('click', function (event) {
+	event.preventDefault();	
 	dropDown.classList.remove('dropdown__list_active');
 	mainButton.textContent = dropDownLink[i].textContent;
-	}
 });
 }
 

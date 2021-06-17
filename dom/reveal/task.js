@@ -5,8 +5,9 @@ const viewPort = window.innerHeight;
 console.log(inform);
 console.log(viewPort - inform.top);
 window.addEventListener('scroll', function() {
-	return viewPort > inform.top ? true : false
-		block.classlist.add('reveal_active');
-		console.log('ssss');
+	if (viewPort > inform.top) {
+		
+	console.log('ssss');
+	}
 	}
 )

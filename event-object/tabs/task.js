@@ -1,10 +1,10 @@
-const tabItem = document.querySelectorAll('.tab');
-const contentPage = document.querySelectorAll('.tab__content');
+const tabItem = Array.from(document.querySelectorAll('.tab'));
+const contentPage = Array.from(document.querySelectorAll('.tab__content'));
 for (let i = 0; i < tabItem.length; i++) {
-	tabItem[i].addEventListener('click', function () {
-		tabItem[i].classList.add('tab_active');
-		tabItem[i - 1].classList.remove('tab_active');
-		contentPage[i].classList.add('tab__content_active');
-		contentPage[i - 1].classList.remove('tab__content_active');
-	});
+    tabItem[i].addEventListener('click', function() {
+        tabItem.map(item => item.classList.remove('tab_active'));
+        tabItem[i].classList.add('tab_active');
+        contentPage.map(item => item.classList.remove('tab__content_active'));
+        contentPage[i].classList.add('tab__content_active');
+    });
 }
