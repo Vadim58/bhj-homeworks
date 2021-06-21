@@ -1,22 +1,10 @@
 const rotator = Array.from(document.querySelectorAll('.rotator__case'));
-
-	function foo(){
-		for (let i = 0; i < rotator.length; i++) {
-		//rotator.map(item => item.classList.remove('rotator__case_active'));
-		if (rotator[i].className === 'rotator__case_active'){
-		rotator[i].classList.remove('rotator__case_active');
-		}
-		
-	}
-	}
-
-
-setInterval(foo, 1000);
-
-
-
-
-
-
+let index = rotator.findIndex(span => span.classList.contains('rotator__case_active'));
+	function rotatorChange(){			
+			rotator[index].classList.remove('rotator__case_active');
+			(index < rotator.length - 1) ? index += 1 : index = 0			
+	        rotator[index].classList.add('rotator__case_active');		
+	}	
+setInterval(rotatorChange, 1000);
 
 
