@@ -68,6 +68,7 @@ class Autocomplete {
   }
 
   getMatches( text ) {
+    console.log(text);
     /*
       TODO: этот метод нужно дописать
       text - фраза, которую вводят в поле поиска
@@ -85,7 +86,8 @@ class Autocomplete {
       {
         text: 'Чубакка',
         value: '1'
-      }
+      },
+    
     ];
   }
 }
