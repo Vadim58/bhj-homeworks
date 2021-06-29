@@ -67,29 +67,19 @@ class Autocomplete {
     this.list.innerHTML = html.join('');
   }
 
-  getMatches( text ) {
-    console.log(text);
-    /*
-      TODO: этот метод нужно дописать
-      text - фраза, которую вводят в поле поиска
-      Метод должен вернуть массив.
-
-      Он формируется на основе списка опций select-элемента (this.input)
-      Подходящие опции - те, чей текст содержит то, что есть в аргументе text
-      Необходимо вернуть массив объектов со свойствами:
-      {
-        text: 'Содержимое <option>',
-        value: 'Содержимое атрибута value'
-      }
-    */
-    return [
-      {
-        text: 'Чубакка',
-        value: '1'
-      },
-    
-    ];
+ getMatches(text) {
+    let glossary = [];
+    let optionsList = Array.from(this.input.options);
+    for (let i = 0; i < optionsList.length; i++) {
+        if (optionsList[i].textContent.includes(text)) {
+            glossary.push({
+                text: optionsList[i].textContent,
+                value: optionsList[i].value
+            })
+        }
+    }
+    return glossary
   }
-}
+ }
 
 new Autocomplete( document.querySelector( '.autocomplete' ));
