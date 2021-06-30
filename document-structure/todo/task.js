@@ -1,4 +1,8 @@
 const tasksList = document.getElementById('tasks__list');
 console.log(tasksList);
-const tasks = document.getElementById('tasks');
-console.log(tasks);
+const taskInput = document.getElementById('task__input');
+console.log(taskInput);
+taskInput.addEventListener('keyup', function(e) {
+
+		console.log(taskInput.value);
+})
