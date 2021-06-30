@@ -1,9 +1,10 @@
 const hasTooltip = document.querySelectorAll('.has-tooltip');
-console.log(hasTooltip[1]);
-hasTooltip[1].addEventListener('click', function(e) {
-	e.preventDefault();
-
-	hasTooltip[1].outerHTML += `
-      <div class="tooltip tooltip_active">Текст подсказки</div>
-	`
-});
+for (let i = 0; i < hasTooltip.length; i++) {
+    let position = hasTooltip[i].getBoundingClientRect();
+    hasTooltip[i].addEventListener('click', function(event) {
+        event.preventDefault();
+        hasTooltip[i].outerHTML += `
+      <div class="tooltip tooltip_active" style = "left: ${position.left}px; top: ${position.top + 15}px; ">${this.title}
+      </div>`
+    });
+}
