@@ -3,7 +3,7 @@ const taskInput = document.getElementById('task__input');
 const tasksAdd = document.getElementById('tasks__add');
 
 function addNewTask() {
-  tasksList.insertAdjacentHTML( 'afterbegin', `
+  tasksList.insertAdjacentHTML('afterbegin', `
      <div class="task">
     <div class="task__title">
         ${taskInput.value}
@@ -14,11 +14,11 @@ function addNewTask() {
   taskInput.value = null;
 }
 
-function removeTask(){
-  const taskRemove = document.querySelector('.task__remove'); 
-      taskRemove.addEventListener("click", function() {
-        taskRemove.parentNode.parentNode.removeChild(taskRemove.parentNode);
-      });
+function removeTask() {
+  const taskRemove = document.querySelector('.task__remove');
+  taskRemove.addEventListener("click", function() {
+    taskRemove.parentNode.parentNode.removeChild(taskRemove.parentNode);
+  });
 }
 
 taskInput.addEventListener('keyup', function(e) {
@@ -36,5 +36,3 @@ tasksAdd.addEventListener('click', function(e) {
     removeTask();
   }
 })
-
-

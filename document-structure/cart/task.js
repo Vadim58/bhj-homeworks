@@ -5,7 +5,6 @@ const decButton = document.querySelectorAll('.product__quantity-control_dec');
 const numberOfGoods = document.querySelectorAll('.product__quantity-value');
 const cart = document.querySelector('.cart__products');
 const addButton = document.querySelectorAll('.product__add');
-
 for (let i = 0; i < product.length; i++) {
     incButton[i].addEventListener('click', function() {
         numberOfGoods[i].textContent = Number(numberOfGoods[i].textContent) + 1;
@@ -18,6 +17,13 @@ for (let i = 0; i < product.length; i++) {
         }
     })
 
+        let cartProduct = Array.from(document.querySelectorAll('.cart__product'));
+        let cartProductsNumber = document.querySelectorAll('.cart__product_count');
+        console.log(cartProductsNumber[i].textContent = Number(cartProductsNumber[i].textContent) + Number(numberOfGoods[i]));
+     if(cartProduct.find(item => item.getAttribute('data-id') === product.getAttribute('data-id'))){
+        cartProductsNumber[i].textContent = Number(cartProductsNumber[i].textContent) + Number(numberOfGoods[i]);
+     }    
+   else {
     addButton[i].addEventListener('click', function() {
         cart.innerHTML += `
       <div class="cart__product" data-id="${product[i].getAttribute('data-id')}">
@@ -25,16 +31,17 @@ for (let i = 0; i < product.length; i++) {
     <div class="cart__product-count">${numberOfGoods[i].textContent}</div>
     </div>
       `
-    })
+    })}
+
+       
+
+       
+
 }
 
 
-/*
+          
+      // cartProductsNumber[i].textContent = Number(cartProductsNumber[i].textContent) + Number(numberOfGoods[i]);
 
-        const cartProduct = document.querySelectorAll('.cart__product');
-        const cartProductsNumber = document.querySelectorAll('.cart__product_count');
-        if (product[i].getAttribute('data-id') === cartProduct[i].getAttribute('data-id')) {
-            cartProductsNumber[i].textContent = Number(cartProductsNumber[i].textContent) + Number(numberOfGoods[i]);
-        }
 
-*/
+

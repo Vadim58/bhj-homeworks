@@ -7,7 +7,5 @@ for (let i = 0; i < hasTooltip.length; i++) {
         hasTooltip[i].outerHTML += `
       <div class="tooltip tooltip_active" style = "left: ${position.left}px; top: ${position.top + 15}px; position: absolute;">${this.title}
       </div>`
-       console.log(hasTooltip[i].getAttribute('href'));
-      
     });
 }
