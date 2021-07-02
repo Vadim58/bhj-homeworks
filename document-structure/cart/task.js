@@ -17,21 +17,25 @@ for (let i = 0; i < product.length; i++) {
         }
     })
 
-        let cartProduct = Array.from(document.querySelectorAll('.cart__product'));
-        let cartProductsNumber = document.querySelectorAll('.cart__product_count');
-        console.log(cartProductsNumber[i].textContent = Number(cartProductsNumber[i].textContent) + Number(numberOfGoods[i]));
-     if(cartProduct.find(item => item.getAttribute('data-id') === product.getAttribute('data-id'))){
-        cartProductsNumber[i].textContent = Number(cartProductsNumber[i].textContent) + Number(numberOfGoods[i]);
-     }    
-   else {
+       
     addButton[i].addEventListener('click', function() {
+         let cartProduct = Array.from(document.querySelectorAll('.cart__product'));
+         let cartProductsNumber = document.querySelectorAll('.cart__product_count');
+         let findedCart = cartProduct.find(item => item.getAttribute('data-id') === product[i].getAttribute('data-id'));
+         
+         if(cartProduct.find(item => item.getAttribute('data-id') === product[i].getAttribute('data-id'))){
+         cartProductsNumber[i].textContent = Number(cartProductsNumber[i].textContent) + Number(numberOfGoods[i]);
+     }   
+     
+    else {
         cart.innerHTML += `
       <div class="cart__product" data-id="${product[i].getAttribute('data-id')}">
     <img class="cart__product-image" src="${image[i].getAttribute('src')}">
     <div class="cart__product-count">${numberOfGoods[i].textContent}</div>
     </div>
       `
-    })}
+    }
+    })
 
        
 
