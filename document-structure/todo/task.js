@@ -3,7 +3,7 @@ const taskInput = document.getElementById('task__input');
 const tasksAdd = document.getElementById('tasks__add');
 
 function addNewTask() {
-  tasksList.insertAdjacentHTML('beforeend', `
+  tasksList.insertAdjacentHTML('afterend', `
      <div class="task">
     <div class="task__title">
         ${taskInput.value}
