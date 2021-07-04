@@ -17,7 +17,7 @@ function addNewTask() {
 function removeTask() {
   const taskRemove = document.querySelector('.task__remove');
   taskRemove.addEventListener("click", function() {
-    taskRemove.parentNode.parentNode.removeChild(taskRemove.parentNode);
+    taskRemove.closest('div').remove();
   });
 }
 
@@ -36,3 +36,4 @@ tasksAdd.addEventListener('click', function(e) {
     removeTask();
   }
 })
+
